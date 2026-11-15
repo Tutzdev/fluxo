@@ -1,0 +1,34 @@
+[project]
+name = "centavo"
+version = "0.1.0"
+description = "Personal finance that sorts itself: import bank statements, learn your categories, see where the month is going."
+requires-python = ">=3.12"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 110
+target-version = "py312"
+extend-exclude = ["web"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM", "N", "RET", "PTH", "C4"]
+# A four-line if/else reads better than a 120-character ternary.
+ignore = ["SIM108"]
+
+[tool.mypy]
+python_version = "3.12"
+packages = ["centavo"]
+strict = true
+plugins = ["pydantic.mypy"]
+
+[[tool.mypy.overrides]]
+module = ["sklearn.*"]
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = ["flask_openapi3", "flask_openapi3.models"]
+implicit_reexport = true
