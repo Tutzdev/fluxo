@@ -8,6 +8,7 @@ from centavo.accounts.routes import blueprint as accounts
 from centavo.auth.routes import private as auth_private
 from centavo.auth.routes import public as auth_public
 from centavo.auth.throttle import LoginThrottle
+from centavo.budgets.routes import blueprint as budgets
 from centavo.categories.routes import blueprint as categories
 from centavo.categorization.cache import ClassifierCache
 from centavo.clock import Clock, SystemClock
@@ -19,7 +20,7 @@ from centavo.imports.routes import blueprint as imports
 from centavo.openapi import INFO, SECURITY_SCHEMES
 from centavo.transactions.routes import blueprint as transactions
 
-API_BLUEPRINTS = (auth_public, auth_private, accounts, categories, transactions, imports)
+API_BLUEPRINTS = (auth_public, auth_private, accounts, categories, transactions, imports, budgets)
 
 
 def create_app(settings: Settings | None = None, clock: Clock | None = None) -> OpenAPI:
