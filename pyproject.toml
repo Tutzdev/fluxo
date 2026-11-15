@@ -1,5 +1,5 @@
 [project]
-name = "centavo"
+name = "fluxo"
 version = "0.1.0"
 description = "Personal finance that sorts itself: import bank statements, learn your categories, see where the month is going."
 requires-python = ">=3.12"
@@ -21,7 +21,7 @@ ignore = ["SIM108"]
 
 [tool.mypy]
 python_version = "3.12"
-packages = ["centavo"]
+packages = ["fluxo"]
 strict = true
 plugins = ["pydantic.mypy"]
 

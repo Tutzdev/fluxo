@@ -3,20 +3,20 @@ services:
   db:
     image: postgres:17-alpine
     environment:
-      POSTGRES_DB: centavo
-      POSTGRES_USER: centavo
-      POSTGRES_PASSWORD: centavo
+      POSTGRES_DB: fluxo
+      POSTGRES_USER: fluxo
+      POSTGRES_PASSWORD: fluxo
     volumes:
       - pgdata:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U centavo"]
+      test: ["CMD-SHELL", "pg_isready -U fluxo"]
       interval: 5s
       retries: 10
 
   api:
     build: .
     environment:
-      DATABASE_URL: postgresql+psycopg://centavo:centavo@db:5432/centavo
+      DATABASE_URL: postgresql+psycopg://fluxo:fluxo@db:5432/fluxo
       DEMO_ENABLED: "true"
     depends_on:
       db:

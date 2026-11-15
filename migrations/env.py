@@ -6,9 +6,9 @@ from alembic import context
 from sqlalchemy import create_engine
 from sqlalchemy.engine import Connection
 
-from centavo.config import Settings
-from centavo.database import Base
-from centavo.models import *  # noqa: F403 - registers every table on Base.metadata
+from fluxo.config import Settings
+from fluxo.database import Base
+from fluxo.models import *  # noqa: F403 - registers every table on Base.metadata
 
 config = context.config
 

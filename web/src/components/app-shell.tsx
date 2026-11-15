@@ -46,7 +46,7 @@ export function Logo() {
   return (
     <span className="flex items-center gap-2 font-display text-xl font-bold tracking-tight">
       <img src="/favicon.svg" alt="" className="size-7" />
-      Centavo
+      Fluxo
     </span>
   )
 }

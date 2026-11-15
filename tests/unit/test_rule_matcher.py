@@ -1,4 +1,4 @@
-from centavo.categorization.rules import Rule, RuleMatcher
+from fluxo.categorization.rules import Rule, RuleMatcher
 
 GROCERIES, SHOPPING, SUBSCRIPTIONS = 1, 2, 3
 

@@ -79,7 +79,7 @@ export function TransactionsPage() {
     <div>
       <PageHeader
         title="Transactions"
-        description="Change a category and Centavo remembers it for lines like that one."
+        description="Change a category and Fluxo remembers it for lines like that one."
         actions={
           <Button onClick={() => setAdding(true)}>
             <Plus aria-hidden className="size-4" />

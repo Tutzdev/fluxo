@@ -40,7 +40,7 @@ function ReviewCallout({ count }: { count: number }) {
       <Inbox aria-hidden className="size-5 shrink-0 text-brass-deep" />
       <span className="flex-1">
         <strong>{plural(count, 'transaction', 'transactions')} this month without a category.</strong> Each one you sort teaches
-        Centavo the next.
+        Fluxo the next.
       </span>
       <span className="font-semibold text-brass-deep">Review</span>
     </Link>

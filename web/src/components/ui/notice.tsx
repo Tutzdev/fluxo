@@ -28,6 +28,6 @@ export function ErrorNotice({ error }: { error: unknown }) {
   }
 
   const message =
-    error instanceof ApiError ? error.message : 'Could not reach Centavo. Check your connection and try again.'
+    error instanceof ApiError ? error.message : 'Could not reach Fluxo. Check your connection and try again.'
   return <Notice tone="error">{message}</Notice>
 }

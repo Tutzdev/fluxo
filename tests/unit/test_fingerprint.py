@@ -1,8 +1,8 @@
 from datetime import date
 from decimal import Decimal
 
-from centavo.imports.fingerprint import fingerprint_lines, manual_fingerprint
-from centavo.imports.parsers.base import StatementLine
+from fluxo.imports.fingerprint import fingerprint_lines, manual_fingerprint
+from fluxo.imports.parsers.base import StatementLine
 
 
 def line(day, description, amount, external_id=None):

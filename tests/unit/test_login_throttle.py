@@ -1,6 +1,6 @@
 from datetime import UTC, datetime, timedelta
 
-from centavo.auth.throttle import LoginThrottle
+from fluxo.auth.throttle import LoginThrottle
 
 NOW = datetime(2026, 11, 15, 12, 0, tzinfo=UTC)
 

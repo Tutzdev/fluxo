@@ -1,8 +1,8 @@
 from alembic.autogenerate import compare_metadata
 from alembic.migration import MigrationContext
 
-from centavo.database import Base
-from centavo.models import *  # noqa: F403 - every table on Base.metadata
+from fluxo.database import Base
+from fluxo.models import *  # noqa: F403 - every table on Base.metadata
 
 
 def test_the_migrations_create_exactly_what_the_models_describe(engine):

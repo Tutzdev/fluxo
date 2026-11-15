@@ -1,4 +1,4 @@
-from centavo.text import normalize_description
+from fluxo.text import normalize_description
 
 
 def test_ignores_case_accents_and_punctuation():

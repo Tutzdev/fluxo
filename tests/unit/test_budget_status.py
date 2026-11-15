@@ -2,7 +2,7 @@ from decimal import Decimal
 
 import pytest
 
-from centavo.budgets.status import BudgetStatus, budget_status
+from fluxo.budgets.status import BudgetStatus, budget_status
 
 
 @pytest.mark.parametrize(

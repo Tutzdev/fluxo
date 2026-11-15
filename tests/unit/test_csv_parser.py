@@ -4,8 +4,8 @@ from pathlib import Path
 
 import pytest
 
-from centavo.imports.parsers.base import StatementFormatError
-from centavo.imports.parsers.csv_parser import parse_csv
+from fluxo.imports.parsers.base import StatementFormatError
+from fluxo.imports.parsers.csv_parser import parse_csv
 
 FIXTURES = Path(__file__).parent.parent / "fixtures"
 

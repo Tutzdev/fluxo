@@ -4,10 +4,10 @@ from pathlib import Path
 
 import pytest
 
-from centavo.imports.models import FileFormat
-from centavo.imports.parsers.base import StatementFormatError
-from centavo.imports.parsers.ofx_parser import parse_ofx
-from centavo.imports.reader import read_statement
+from fluxo.imports.models import FileFormat
+from fluxo.imports.parsers.base import StatementFormatError
+from fluxo.imports.parsers.ofx_parser import parse_ofx
+from fluxo.imports.reader import read_statement
 
 FIXTURES = Path(__file__).parent.parent / "fixtures"
 

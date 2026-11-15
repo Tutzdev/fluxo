@@ -17,7 +17,7 @@ function ImportResult({ result }: { result: StatementImport }) {
     <Notice tone="success">
       <p>
         {plural(result.imported_count, 'new transaction', 'new transactions')} from {result.filename}
-        {result.duplicate_count > 0 && `, ${plural(result.duplicate_count, 'line was', 'lines were')} already in Centavo and skipped`}.{' '}
+        {result.duplicate_count > 0 && `, ${plural(result.duplicate_count, 'line was', 'lines were')} already in Fluxo and skipped`}.{' '}
         {result.categorized_count} got a category right away.
       </p>
       {waiting > 0 && (
@@ -61,7 +61,7 @@ export function ImportPage() {
       <div>
         <PageHeader title="Import a statement" />
         <p className="rounded-2xl bg-surface p-8 ring-1 ring-line">
-          First tell Centavo which account the statement belongs to.{' '}
+          First tell Fluxo which account the statement belongs to.{' '}
           <Link to="/accounts" className="font-semibold underline">
             Add an account
           </Link>
@@ -74,7 +74,7 @@ export function ImportPage() {
     <div>
       <PageHeader
         title="Import a statement"
-        description="A CSV or OFX file from your bank's app or website. Importing the same period twice is fine: lines already in Centavo are skipped."
+        description="A CSV or OFX file from your bank's app or website. Importing the same period twice is fine: lines already in Fluxo are skipped."
       />
 
       <form onSubmit={submit} className="flex max-w-2xl flex-col gap-5">
@@ -121,7 +121,7 @@ export function ImportPage() {
           <input type="checkbox" checked={invert} onChange={(event) => setInvert(event.target.checked)} className="mt-1 size-4 accent-ink" />
           <span>
             <span className="font-semibold">Purchases are positive numbers in this file</span>
-            <span className="block text-ink-soft">Common in credit card exports. Centavo flips them so spending is negative everywhere.</span>
+            <span className="block text-ink-soft">Common in credit card exports. Fluxo flips them so spending is negative everywhere.</span>
           </span>
         </label>
 

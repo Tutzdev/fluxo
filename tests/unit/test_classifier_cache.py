@@ -1,4 +1,4 @@
-from centavo.categorization.cache import ClassifierCache
+from fluxo.categorization.cache import ClassifierCache
 
 
 class CountingTrainer:

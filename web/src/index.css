@@ -3,9 +3,9 @@
 @import 'tailwindcss';
 
 /*
- * Centavo: a bank statement that sorts itself.
+ * Fluxo: a bank statement that sorts itself.
  * Statement paper and petrol ink. Spending is not painted red: money going out is normal life, and red is kept
- * for the one thing that needs alarm, a budget that went over. Brass, the colour of the centavo coins, is spent
+ * for the one thing that needs alarm, a budget that went over. Brass, the colour of coins, is spent
  * on what the app learned and on what still needs the person. Fonts are bundled, never fetched from Google.
  */
 :root {

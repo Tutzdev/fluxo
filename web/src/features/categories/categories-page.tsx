@@ -157,7 +157,7 @@ export function CategoriesPage() {
     <div>
       <PageHeader
         title="Categories & rules"
-        description="A rule is a word from the bank description. When it shows up, the transaction goes to that category, no guessing. Rules always win over what Centavo learned, and only your own choices win over rules."
+        description="A rule is a word from the bank description. When it shows up, the transaction goes to that category, no guessing. Rules always win over what Fluxo learned, and only your own choices win over rules."
       />
 
       <div className="mb-8 flex flex-col gap-4">

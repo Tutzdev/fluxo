@@ -67,7 +67,7 @@ export function AddTransactionDialog({ open, onOpenChange }: AddTransactionDialo
       open={open}
       onOpenChange={onOpenChange}
       title="Add a transaction"
-      description="For cash and anything your bank statement does not show. Leave the category empty and Centavo will try."
+      description="For cash and anything your bank statement does not show. Leave the category empty and Fluxo will try."
     >
       <form onSubmit={submit} className="flex flex-col gap-4" noValidate>
         <SelectField label="Account" error={errors.account_id?.message} {...form.register('account_id')}>
@@ -96,7 +96,7 @@ export function AddTransactionDialog({ open, onOpenChange }: AddTransactionDialo
             aria-label="Category"
             value={form.watch('category_id')}
             onChange={(categoryId) => form.setValue('category_id', categoryId)}
-            emptyLabel="Let Centavo decide"
+            emptyLabel="Let Fluxo decide"
             className="min-h-11"
           />
         </div>

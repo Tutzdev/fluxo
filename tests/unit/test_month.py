@@ -2,7 +2,7 @@ from datetime import date
 
 import pytest
 
-from centavo.month import Month
+from fluxo.month import Month
 
 
 def test_parses_year_and_month():

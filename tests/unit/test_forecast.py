@@ -1,8 +1,8 @@
 from datetime import date
 from decimal import Decimal
 
-from centavo.reports.forecast import build_forecast
-from centavo.reports.recurring import RecurringSeries
+from fluxo.reports.forecast import build_forecast
+from fluxo.reports.recurring import RecurringSeries
 
 
 def series(description, amount, day):

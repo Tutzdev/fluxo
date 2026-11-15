@@ -3,7 +3,7 @@ import { createContext, type ReactNode, useCallback, useContext, useMemo, useSta
 import { api, connectSession } from '@/lib/api'
 import type { Session, User } from '@/lib/types'
 
-const STORAGE_KEY = 'centavo.session'
+const STORAGE_KEY = 'fluxo.session'
 
 interface SessionContextValue {
   user: User | null

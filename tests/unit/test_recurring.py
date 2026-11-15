@@ -1,7 +1,7 @@
 from datetime import date
 from decimal import Decimal
 
-from centavo.reports.recurring import PastTransaction, find_recurring
+from fluxo.reports.recurring import PastTransaction, find_recurring
 
 
 def paid(month, day, description, amount):

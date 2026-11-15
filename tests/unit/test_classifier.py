@@ -1,6 +1,6 @@
-from centavo.categorization.classifier import CategoryClassifier
-from centavo.categorization.service import MIN_CONFIDENCE
-from centavo.text import normalize_description
+from fluxo.categorization.classifier import CategoryClassifier
+from fluxo.categorization.service import MIN_CONFIDENCE
+from fluxo.text import normalize_description
 
 GROCERIES, RESTAURANTS, TRANSPORT = 1, 2, 3
 

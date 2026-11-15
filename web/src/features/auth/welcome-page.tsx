@@ -17,7 +17,7 @@ interface SampleLine {
   needsYou?: boolean
 }
 
-/** What happens to a statement inside Centavo, shown with lines like the ones a Brazilian bank exports. */
+/** What happens to a statement inside Fluxo, shown with lines like the ones a Brazilian bank exports. */
 const SAMPLE_LINES: SampleLine[] = [
   { description: 'SALARIO ACME TECNOLOGIA', amount: '+R$ 6.800,00', category: 'Salary', decidedBy: 'Rule' },
   { description: 'IFOOD *IFOOD', amount: '−R$ 58,90', category: 'Restaurants', decidedBy: 'Rule' },
@@ -43,7 +43,7 @@ function StatementPreview() {
             <span className="resolve flex items-center gap-2 text-sm" style={{ animationDelay: `${300 + index * 180}ms` }}>
               {line.needsYou ? (
                 <span className="rounded-full bg-brass-soft px-2 py-0.5 text-xs font-semibold text-brass-deep">
-                  Needs you: one click teaches Centavo
+                  Needs you: one click teaches Fluxo
                 </span>
               ) : (
                 <>
@@ -195,7 +195,7 @@ export function WelcomePage() {
         <div className="max-w-xl">
           <h1 className="text-3xl sm:text-4xl">Your bank statement, sorted.</h1>
           <p className="mt-4 text-lg text-ink-soft">
-            Import the CSV or OFX your bank gives you. Centavo files every line under a category, learns from each
+            Import the CSV or OFX your bank gives you. Fluxo files every line under a category, learns from each
             correction you make, and tells you how the month is going to end.
           </p>
         </div>

@@ -14,7 +14,7 @@ import type { CategorizationSummary } from '@/lib/types'
 function LearningResult({ result }: { result: CategorizationSummary }) {
   return (
     <Notice tone="success">
-      Centavo went through everything again: {plural(result.by_model, 'transaction', 'transactions')} sorted by what
+      Fluxo went through everything again: {plural(result.by_model, 'transaction', 'transactions')} sorted by what
       it learned from you, {result.by_rule} by your rules.{' '}
       {result.left_for_review > 0
         ? `${plural(result.left_for_review, 'still needs', 'still need')} you.`
@@ -57,7 +57,7 @@ export function ReviewPage() {
     <div>
       <PageHeader
         title="Review"
-        description="Lines no rule knew and Centavo was not sure about. Pick a category for a few, then let Centavo use what you taught on the rest."
+        description="Lines no rule knew and Fluxo was not sure about. Pick a category for a few, then let Fluxo use what you taught on the rest."
       />
 
       <div className="mb-6 flex flex-col gap-3">
@@ -68,7 +68,7 @@ export function ReviewPage() {
       {sortedThisVisit > 0 && (
         <div className="sticky top-16 z-20 mb-6 flex flex-wrap items-center justify-between gap-3 rounded-xl bg-ink px-4 py-3 text-paper lg:top-4">
           <p className="text-sm">
-            You sorted {plural(sortedThisVisit, 'line', 'lines')}. Centavo can now look for similar ones.
+            You sorted {plural(sortedThisVisit, 'line', 'lines')}. Fluxo can now look for similar ones.
           </p>
           <Button variant="brass" size="small" busy={recategorize.isPending} onClick={learn}>
             <Sparkles aria-hidden className="size-4" />
@@ -82,7 +82,7 @@ export function ReviewPage() {
           <h2 className="text-xl">Nothing to review</h2>
           <p className="mt-2 text-ink-soft">
             Every transaction has a category. New ones show up here after an <Link to="/import" className="font-semibold underline">import</Link>{' '}
-            when no rule matches and Centavo is not sure.
+            when no rule matches and Fluxo is not sure.
           </p>
         </div>
       ) : (

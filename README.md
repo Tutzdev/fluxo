@@ -1,8 +1,8 @@
-# Centavo
+# Fluxo
 
-Personal finance that sorts itself: import the statement your bank gives you, and Centavo files every line under a category, learns from each correction you make, and tells you how the month is going to end.
+Personal finance that sorts itself: import the statement your bank gives you, and Fluxo files every line under a category, learns from each correction you make, and tells you how the month is going to end.
 
-[![CI](https://github.com/Tutzdev/centavo/actions/workflows/ci.yml/badge.svg)](https://github.com/Tutzdev/centavo/actions/workflows/ci.yml)
+[![CI](https://github.com/Tutzdev/fluxo/actions/workflows/ci.yml/badge.svg)](https://github.com/Tutzdev/fluxo/actions/workflows/ci.yml)
 ![Python 3.12](https://img.shields.io/badge/Python-3.12-12343b?style=flat-square&logo=python&logoColor=white)
 ![Flask 3](https://img.shields.io/badge/Flask-3-12343b?style=flat-square&logo=flask&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-17-12343b?style=flat-square&logo=postgresql&logoColor=white)
@@ -27,7 +27,7 @@ Every finance app asks you to categorize your spending. Almost nobody keeps doin
 - **Money moves between your own accounts.** Paying the credit card bill from checking is not spending: the purchases on the card were. Count both and the month looks twice as expensive.
 - **"Where did my money go" is the past.** The useful question is where the balance will be on the 30th.
 
-Centavo is built around those four problems.
+Fluxo is built around those four problems.
 
 ## Backend highlights
 
@@ -60,7 +60,7 @@ Centavo is built around those four problems.
 - **Cold start.** A new account comes with 15 categories and 94 rules for common Brazilian merchants (IFOOD, UBER, NETFLIX, DROGASIL, SABESP...). The model has nothing to learn from on day one; the rules carry it.
 - **The classifier** is character n-grams (3 to 5) with TF-IDF and logistic regression, one per user. Character n-grams because bank text is abbreviated and inconsistent; logistic regression because it gives a real probability to compare with the threshold. In the demo, one correction for `PREZUNIC TIJUCA` is enough: the other nine purchases there come in as Groceries at 82%.
 - **No model files.** Training on a personal history takes milliseconds, so models live in a small LRU cache per process, keyed by the user's `labels_version`. Every correction or rule change bumps the version; the next categorization trains again. Nothing to migrate, no pickles to trust. ([ADR 0002](docs/adr/0002-a-model-per-user-trained-on-demand.md))
-- **Review, then "sort the rest".** In the review queue the person picks categories for a few lines, then asks Centavo to go through everything not categorized by hand again with what it just learned.
+- **Review, then "sort the rest".** In the review queue the person picks categories for a few lines, then asks Fluxo to go through everything not categorized by hand again with what it just learned.
 
 ## How an import stays idempotent
 
@@ -198,10 +198,10 @@ docker compose up --build
 python -m venv .venv && source .venv/bin/activate      # Windows: .venv\Scripts\activate
 pip install -r requirements-dev.txt
 
-export DATABASE_URL=postgresql+psycopg://centavo:centavo@localhost:5432/centavo
+export DATABASE_URL=postgresql+psycopg://fluxo:fluxo@localhost:5432/fluxo
 export DEMO_ENABLED=true
 alembic upgrade head
-flask --app centavo.wsgi run                            # API on :5000, Swagger on /api/docs/swagger
+flask --app fluxo.wsgi run                            # API on :5000, Swagger on /api/docs/swagger
 
 cd web && npm install && npm run dev                    # web on :5173, /api proxied to :5000
 ```
@@ -209,7 +209,7 @@ cd web && npm install && npm run dev                    # web on :5173, /api pro
 Tests need an empty database they can own:
 
 ```bash
-export TEST_DATABASE_URL=postgresql+psycopg://centavo:centavo@localhost:5432/centavo_test
+export TEST_DATABASE_URL=postgresql+psycopg://fluxo:fluxo@localhost:5432/fluxo_test
 pytest && ruff check . && mypy
 ```
 
@@ -218,7 +218,7 @@ All settings and their defaults are in [`.env.example`](.env.example).
 ## Project layout
 
 ```text
-centavo/
+fluxo/
   auth/            sign up, sign in, tokens, login throttle
   accounts/        accounts and live balances
   categories/      categories, keyword rules, the starter kit

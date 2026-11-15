@@ -16,11 +16,11 @@ from flask.testing import FlaskClient
 from flask_openapi3 import OpenAPI
 from sqlalchemy import Engine, create_engine, text
 
-from centavo.app import create_app
-from centavo.config import Settings
+from fluxo.app import create_app
+from fluxo.config import Settings
 
 TEST_DATABASE_URL = os.environ.get(
-    "TEST_DATABASE_URL", "postgresql+psycopg://centavo:centavo@localhost:5432/centavo_test"
+    "TEST_DATABASE_URL", "postgresql+psycopg://fluxo:fluxo@localhost:5432/fluxo_test"
 )
 TIMEZONE = ZoneInfo("America/Sao_Paulo")
 

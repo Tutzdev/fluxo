@@ -5,17 +5,17 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 
 WORKDIR /app
 
-RUN useradd --create-home --uid 10001 centavo
+RUN useradd --create-home --uid 10001 fluxo
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY alembic.ini .
 COPY migrations ./migrations
-COPY centavo ./centavo
+COPY fluxo ./fluxo
 
-USER centavo
+USER fluxo
 EXPOSE 8000
 
 # Migrations run before the server starts, so the schema and the code always match.
-CMD ["sh", "-c", "alembic upgrade head && exec gunicorn --workers 2 --bind 0.0.0.0:8000 --access-logfile - centavo.wsgi:app"]
+CMD ["sh", "-c", "alembic upgrade head && exec gunicorn --workers 2 --bind 0.0.0.0:8000 --access-logfile - fluxo.wsgi:app"]

@@ -17,7 +17,7 @@ function label(transaction: Transaction) {
       return (
         <span
           className="rounded-full px-2 py-0.5 text-xs font-semibold text-brass-deep ring-1 ring-inset ring-brass/50"
-          title="Centavo learned this from categories you chose before"
+          title="Fluxo learned this from categories you chose before"
         >
           Learned {confidence}%
         </span>

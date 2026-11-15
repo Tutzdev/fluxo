@@ -12,17 +12,17 @@ jobs:
       postgres:
         image: postgres:17-alpine
         env:
-          POSTGRES_DB: centavo_test
-          POSTGRES_USER: centavo
-          POSTGRES_PASSWORD: centavo
+          POSTGRES_DB: fluxo_test
+          POSTGRES_USER: fluxo
+          POSTGRES_PASSWORD: fluxo
         ports:
           - 5432:5432
         options: >-
-          --health-cmd "pg_isready -U centavo"
+          --health-cmd "pg_isready -U fluxo"
           --health-interval 5s
           --health-retries 10
     env:
-      TEST_DATABASE_URL: postgresql+psycopg://centavo:centavo@localhost:5432/centavo_test
+      TEST_DATABASE_URL: postgresql+psycopg://fluxo:fluxo@localhost:5432/fluxo_test
     steps:
       - uses: actions/checkout@v4
 

@@ -2,7 +2,7 @@ from decimal import Decimal
 
 import pytest
 
-from centavo.money import parse_amount, to_money
+from fluxo.money import parse_amount, to_money
 
 
 @pytest.mark.parametrize(
