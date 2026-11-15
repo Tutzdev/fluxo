@@ -15,6 +15,7 @@ from centavo.clock import Clock, SystemClock
 from centavo.components import Components
 from centavo.config import Settings
 from centavo.database import Database
+from centavo.demo.routes import blueprint as demo
 from centavo.errors import register_error_handlers, validation_problem
 from centavo.imports.routes import blueprint as imports
 from centavo.openapi import INFO, SECURITY_SCHEMES
@@ -62,3 +63,6 @@ def create_app(settings: Settings | None = None, clock: Clock | None = None) -> 
 def _register_blueprints(app: OpenAPI, settings: Settings) -> None:
     for blueprint in API_BLUEPRINTS:
         app.register_api(blueprint)
+
+    if settings.demo_enabled:
+        app.register_api(demo)
