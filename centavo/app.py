@@ -4,6 +4,7 @@ import logging
 
 from flask_openapi3 import OpenAPI
 
+from centavo.accounts.routes import blueprint as accounts
 from centavo.auth.routes import private as auth_private
 from centavo.auth.routes import public as auth_public
 from centavo.auth.throttle import LoginThrottle
@@ -16,7 +17,7 @@ from centavo.database import Database
 from centavo.errors import register_error_handlers, validation_problem
 from centavo.openapi import INFO, SECURITY_SCHEMES
 
-API_BLUEPRINTS = (auth_public, auth_private, categories)
+API_BLUEPRINTS = (auth_public, auth_private, accounts, categories)
 
 
 def create_app(settings: Settings | None = None, clock: Clock | None = None) -> OpenAPI:
