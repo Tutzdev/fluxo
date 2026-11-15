@@ -1,0 +1,108 @@
+@import '@fontsource-variable/bricolage-grotesque';
+@import '@fontsource-variable/manrope';
+@import 'tailwindcss';
+
+/*
+ * Centavo: a bank statement that sorts itself.
+ * Statement paper and petrol ink. Spending is not painted red: money going out is normal life, and red is kept
+ * for the one thing that needs alarm, a budget that went over. Brass, the colour of the centavo coins, is spent
+ * on what the app learned and on what still needs the person. Fonts are bundled, never fetched from Google.
+ */
+:root {
+  --paper: #eef2ef;
+  --surface: #ffffff;
+  --ink: #12343b;
+  --ink-soft: #4d6468;
+  --line: #d3dcd8;
+  --income: #2f7d5b;
+  --brass: #c99a1e;
+  --brass-deep: #8a6a10;
+  --brass-soft: #f6ecc9;
+  --over: #b3261e;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-line: var(--line);
+  --color-income: var(--income);
+  --color-brass: var(--brass);
+  --color-brass-deep: var(--brass-deep);
+  --color-brass-soft: var(--brass-soft);
+  --color-over: var(--over);
+
+  --font-display: 'Bricolage Grotesque Variable', 'Segoe UI', sans-serif;
+  --font-sans: 'Manrope Variable', system-ui, sans-serif;
+
+  /* A 1.25 scale from a 16px body. */
+  --text-xs: 0.8rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5625rem;
+  --text-2xl: 1.953rem;
+  --text-3xl: 2.441rem;
+  --text-4xl: 3.052rem;
+}
+
+@layer base {
+  html {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    min-height: 100dvh;
+    line-height: 1.55;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 650;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--brass);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@layer utilities {
+  /* Every amount lines up digit under digit. */
+  .figures {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: 'tnum';
+  }
+}
+
+/* The welcome page's statement lines resolve into categories once, on load. */
+@keyframes resolve {
+  from {
+    opacity: 0;
+    transform: translateX(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.resolve {
+  animation: resolve 420ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .resolve {
+    animation: none;
+  }
+}
