@@ -18,9 +18,10 @@ from centavo.database import Database
 from centavo.errors import register_error_handlers, validation_problem
 from centavo.imports.routes import blueprint as imports
 from centavo.openapi import INFO, SECURITY_SCHEMES
+from centavo.reports.routes import blueprint as reports
 from centavo.transactions.routes import blueprint as transactions
 
-API_BLUEPRINTS = (auth_public, auth_private, accounts, categories, transactions, imports, budgets)
+API_BLUEPRINTS = (auth_public, auth_private, accounts, categories, transactions, imports, budgets, reports)
 
 
 def create_app(settings: Settings | None = None, clock: Clock | None = None) -> OpenAPI:
